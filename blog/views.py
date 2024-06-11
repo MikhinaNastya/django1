@@ -6,18 +6,20 @@ from blog.models import Post, Comment
 
 
 def index(request, *args, **kwargs):
-    post_id = request.GET.get("post_id", 1)
-    post = Post.objects.get(pk=post_id)
+    posts = Post.objects.all()
 
     context = {
-        "test_post": post
+        "my_posts": posts,
+        "name": "Arman",
     }
-    template = loader.get_template('blog/index.html')
 
-    return HttpResponse(template.render(context, request))
-
-    # return HttpResponse(f"<h1>{post.title}</h1>"
-    #                     f"<p>{post.content}</p>")
+    # template = loader.get_template('blog/index.html')
+    # return HttpResponse(template.render(context, request))
+    return render(
+        request=request,
+        template_name='blog/index.html',
+        context=context
+    )
 
 
 def detail(request, *args, **kwargs):

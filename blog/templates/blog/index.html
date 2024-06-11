@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <title>Posts</title>
 </head>
-<body style="background-color: red;">
-    <h1>{{ test_post.title }}</h1>
-    <p>{{ test_post.content }}</p>
+<body>
+    {% if name == "Ulan" %}
+        <div>
+            <h1>Привет, Улан!</h1>
+        </div>
+    {% else %}
+        <div>
+            <h1>Привет, Незнакомец!</h1>
+        </div>
+    {% endif %}
+
+    <div style="background-color: green;">
+        {% for post in my_posts %}
+        <div>
+            <h1><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.content }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
