@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+    <div>
+        <h1>Создать пост</h1>
+    </div>
+
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <p>
+                <label>Title</label>
+                <input type="text" name="title"/>
+            </p>
+            <p>
+                <label>Content</label>
+                <input type="text" name="content" />
+            </p>
+            <p>
+                <button type="submit">Submit!</button>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>
