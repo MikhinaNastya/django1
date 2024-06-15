@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Posts</title>
-</head>
-<body>
-    {% if name == "Ulan" %}
-        <div>
-            <h1>Привет, Улан!</h1>
-        </div>
-    {% else %}
-        <div>
-            <h1>Привет, Незнакомец!</h1>
-        </div>
-    {% endif %}
+{% extends 'base.html' %}
+
+{% block title %}
+Posts
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Все посты, {{ user }}</h1>
+    </div>
 
     <div style="background-color: green;">
         {% for post in my_posts %}
@@ -23,5 +17,4 @@
         </div>
         {% endfor %}
     </div>
-</body>
-</html>
+{% endblock %}

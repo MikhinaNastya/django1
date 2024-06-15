@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+    {% block title %}
+        Template title
+    {% endblock %}
+    </title>
+</head>
+<body style="background-color: blue;">
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Login</li>
+        </ul>
+    </nav>
+    {% block content %}
+    <h1>Hello from base.html</h1>
+    {% endblock %}
+</body>
+</html>
